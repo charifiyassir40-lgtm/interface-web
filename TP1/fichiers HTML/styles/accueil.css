@@ -1,0 +1,45 @@
+.forme{
+    display: flex;
+    background-color:gainsboro ;
+    flex-direction: row;
+    background: linear-gradient(white,gainsboro);
+    justify-content: space-between;
+
+}
+
+ main h1{
+    color: var(--primary-color);
+    background:linear-gradient(white,gainsboro);
+    padding-left: 0px;
+    
+}
+main h2 {
+    color: green;
+}
+img {
+    max-width: 800px;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    
+    
+}
+
+.texte{
+    max-width: 400px;
+    
+}
+
+.forme1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    
+}
+
+.carte1{
+    width: 300px;
+    
+}

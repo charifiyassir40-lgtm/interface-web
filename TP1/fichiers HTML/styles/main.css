@@ -1,0 +1,82 @@
+header h1, header p {
+    color: white;
+    background-color: var(--primary-color);
+    padding-left: 100px;
+    
+    
+    
+}
+
+header {
+    position: relative;
+    background-color: var(--primary-color);
+    
+    
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+
+ ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style: none;
+    padding-right: 150px;
+    padding-top: 10px;
+    
+}
+
+ header a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+footer {
+    background-color: #CAE9FA;
+    position: relative ;
+}
+
+h3{
+    color: blue;
+}
+
+footer p {
+    color: grey;
+}
+
+.colonnes{
+    display: flex;
+    flex-direction: row ;
+    gap: 200px;
+    padding-left: 400px;
+    
+}
+
+footer a{
+    text-decoration: none;
+    color: grey;
+}
+
+ .contact{
+    color: blue;
+}
+
+
+#copywright{
+    padding-left: 700px;
+}
