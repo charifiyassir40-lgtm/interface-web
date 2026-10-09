@@ -1,45 +1,176 @@
 .forme{
     display: flex;
-    background-color:gainsboro ;
     flex-direction: row;
     background: linear-gradient(white,gainsboro);
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+    padding: 50px 30px;
 
 }
 
- main h1{
+ .texte {
+    width: 400px;
+ }
+
+ .texte h1{
     color: var(--primary-color);
-    background:linear-gradient(white,gainsboro);
-    padding-left: 0px;
-    
-}
-main h2 {
-    color: green;
-}
-img {
-    max-width: 800px;
-    border-radius: 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    
-    
-    
+    font-size: 36px;
+ }
+
+ .texte p{
+    color: grey;
+ }
+ 
+ .texte h2{
+    color: var(--secondary-color);
+ }
+ 
+ .forme img {
+    width: 50%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
-.texte{
-    max-width: 400px;
-    
-}
 
-.forme1{
+
+
+
+
+.forme1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: stretch;
+    gap: 25px;
+
+    padding: 70px 20px;
+}
+
+
+
+.carte  {
+    background-color: white;
+    width: 350px;
+    min-width: 350px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
     
 }
 
-.carte1{
-    width: 300px;
+
+
+.carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+
+.forme1 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+.contenuCarte {
+    padding: 10px;
+}
+
+
+
+.contenuCarte h2 {
+    color: var(--primary-color);
+}
+
+
+
+.contenuCarte p {
+    color: grey;
+    line-height: 1.5;
+}
+
+
+
+.bouton {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
     
+}
+
+
+
+.bouton:hover {
+    background-color: green;
+    transform: translateY(-3px);
+}
+
+
+
+
+
+
+@media (max-width: 1023px) {
+
+    
+    .forme {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texte {
+        width: 100%;
+    }
+
+    .forme img {
+        width: 100%;
+    }
+
+    
+    .forme1 {
+        flex-wrap: wrap;
+    }
+
+    
+    .carte {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+
+    
+    
+    .forme1 {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+@media (max-width: 479px) {
+
+    
+    .carte {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .forme img {
+        height: auto;
+    }
 }

@@ -1,82 +1,102 @@
-header h1, header p {
-    color: white;
-    background-color: var(--primary-color);
-    padding-left: 100px;
-    
-    
-    
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+
 }
 
 header {
-    position: relative;
     background-color: var(--primary-color);
-    
-    
-}
-
-nav {
-    position: absolute;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
     top: 0;
-    right: 0;
-    
 }
 
- ul {
+header h1 {
+    margin: 0;
+    color: white;
+}
+
+header p {
+    color: white;
+}
+
+nav ul {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    gap: 25px;
     list-style: none;
-    padding-right: 150px;
-    padding-top: 10px;
-    
+    padding: 0;
 }
 
- header a {
+header a {
     color: white;
     text-decoration: none;
-    
 }
 
-a:hover {
+header a:hover {
     text-decoration: underline;
 }
 
-
-
-
-
-
 footer {
-    background-color: #CAE9FA;
-    position: relative ;
+    background-color: var(--footer-bg);
+    padding: 40px 20px;
 }
 
-h3{
-    color: blue;
+footer h3 {
+    color: var(--primary-color);
+}
+
+.colonnes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
 }
 
 footer p {
     color: grey;
 }
 
-.colonnes{
-    display: flex;
-    flex-direction: row ;
-    gap: 200px;
-    padding-left: 400px;
-    
-}
-
-footer a{
-    text-decoration: none;
+footer a {
     color: grey;
+    text-decoration: none;
 }
 
- .contact{
-    color: blue;
+footer .contact {
+    color: var(--primary-color);
 }
 
+#copywright {
+    text-align: center;
+    margin-top: 40px;
+}
 
-#copywright{
-    padding-left: 700px;
+@media (max-width: 1023px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .colonnes {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 767px) {
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .colonnes {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

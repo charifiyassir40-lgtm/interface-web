@@ -1,55 +1,56 @@
-.EnteteRecette{
+.EnteteRecette {
     text-align: center;
-    background: linear-gradient(white,gainsboro);
-    padding:   30px;
+    background: linear-gradient(white, gainsboro);
+    padding: 30px;
 }
 
 .EnteteRecette h1 {
-    color:var(--primary-color);
+    color: var(--primary-color);
     font-size: 36px;
-    
-    
+
+
 
 }
 
-.EnteteRecette p{
+.EnteteRecette p {
     color: grey;
     max-width: 450px;
-    margin :auto;
-    
+    margin: auto;
+
 }
 
-.formeCarte{
+.formeCarte {
     display: flex;
     flex-direction: row;
-    
+
     flex-wrap: wrap;
     gap: 30px;
     margin: 40px auto;
     max-width: 1200px;
 }
 
-.carte{
+.carte {
     border-radius: 15px;
     width: 350px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 
-    
+
+
+
 }
 
-.contenuCarte{
+.contenuCarte {
     padding: 20px;
-    
+
 }
 
-.contenuCarte h2{
+.contenuCarte h2 {
     margin-top: 10px;
     margin-bottom: 20px;
 
 }
 
-.contenuCarte p{
+.contenuCarte p {
     margin-bottom: 20px;
     color: grey;
 }
@@ -62,7 +63,7 @@
 
 }
 
-.badges{
+.badges {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
@@ -77,31 +78,49 @@
     font-weight: bold;
 }
 
-.badges .badgefacile{
-    background-color: rgba(57,181,74,0.2);
-    color:#39B54A;
-    
+.badges .badgefacile {
+    background-color: rgba(57, 181, 74, 0.2);
+    color: #39B54A;
+
 }
 
- .badges .badgemoyen{
-    background-color:rgba(220,193,7,0.2);
+.badges .badgemoyen {
+    background-color: rgba(220, 193, 7, 0.2);
     color: #856404;
-    
+
 }
 
-.carte button{
+.bouton {
     background-color: #39B54A;
     color: white;
     font-weight: bold;
     border-radius: 25px;
     padding: 12px 24px;
     border: none;
-    transition:all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
 
 }
 
-.carte button:hover{
+.bouton:hover {
     text-decoration: none;
     background-color: goldenrod;
     transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+    .carte {
+        width: 100%;
+    }
+
+    .formeCarte {
+        margin: 20px;
+    }
+}
+
+
+@media (max-width: 479px) {
+    .formeCarte {
+        margin: 10px;
+    }
 }

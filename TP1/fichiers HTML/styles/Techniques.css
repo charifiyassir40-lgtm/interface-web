@@ -1,0 +1,83 @@
+.EnteteTechnique {
+    background-color: #f8f9fa;
+    text-align: center;
+     padding: 45px 20px;
+}
+
+
+.EnteteTechnique h1 {
+    color: var(--primary-color);
+    font-size: 40px;
+}
+
+.EnteteTechnique p {
+    color: grey;
+    font-size: 16px;
+}
+
+.grilleTechnique{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 50px auto 100px;
+}
+
+.carte{
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.carte h2, .securité h2{
+    color: var(--primary-color);
+}
+
+.carte h3 {
+    font-weight: 600;
+    color: black;
+}
+
+.carte p {
+    font-size: 14px;
+}
+
+.carte hr{
+    border: none;
+    border-top: 1px solid gainsboro;
+    margin-top: 15px;
+}
+
+.mesure{
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 5px;
+    
+}
+
+.securité{
+    grid-column: 1 / -1;
+    background-color:lightgreen;
+    border-left: 3px;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.securité p {
+    color: #39B54A;
+    
+}
+
+@media (max-width: 1023px) {
+    .grilleTechnique {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        
+    }
+}
+
+@media (max-width: 767px) {
+    .grilleTechnique {
+        grid-template-columns: 1fr;
+    }
+}
