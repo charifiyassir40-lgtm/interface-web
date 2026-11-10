@@ -19,8 +19,7 @@ const jeux = [
  * @param {HTMLElement} elementUl - L'élément <ul> dans lequel ajouter les items
  */
 function afficherJeux(listeJeux, elementUl) {
-    // TODO: Implémenter la logique pour afficher chaque jeu dans l'élément ul
-    // Format: <li>nom (duree min)</li>
+    
     listeJeux.forEach((jeu)=> {
     const elementLi = document.createElement("li");
     elementLi.textContent = `${jeu.nom} (${jeu.duree} min)` ;
@@ -37,17 +36,13 @@ function initialiser() {
     const listCourt = document.querySelector("#liste-court");
     const listLong = document.querySelector("#liste-long");
 
-    // TODO: Filtrer les jeux courts (moins de 60 minutes)
+    
 
-    // TODO: Filtrer les jeux longs (60 minutes ou plus)
+    const JeuxCourt = jeux.filter((jeu) => jeu.duree < 60);
+    const JeuxLong = jeux.filter((jeu) => jeu.duree >= 60);
 
-    // TODO: Appeler afficherJeux pour chaque liste
-
-    const filtréListeCourt = jeux.filter((jeu) => jeu.duree < 60);
-    const filtréListeLong = jeux.filter((jeu) => jeu.duree >= 60);
-
-     afficherJeux(filtréListeCourt,listCourt) ;
-     afficherJeux(filtréListeLong,listLong) ;
+     afficherJeux(JeuxCourt,listCourt) ;
+     afficherJeux(JeuxLong,listLong) ;
 
 
     

@@ -7,22 +7,74 @@
  * Initialise toutes les fonctionnalités de la page
  */
 function initialiser() {
-    // TODO: Étape 1 - Navigation entre les nœuds
-    // Récupérez #fruits et #out
-    // Utilisez firstElementChild, lastElementChild, children[0].nextElementSibling
-    // Affichez : "Premier : X | Dernier : Y | Après le 1er : Z"
+    
+    const liste = document.querySelector("#fruits");
+    const out = document.querySelector("#out");
+    
+    
+     const pomme = liste.firstElementChild.textContent;
+     const banane = liste.children[0].nextElementSibling.textContent;
+     const orange = liste.lastElementChild.textContent;
+     out.textContent = `Premier : ${pomme} | Dernier : ${orange} | Après le 1er : ${banane}` ;
+     
 
-    // TODO: Étape 2 - Création et insertion d'éléments
-    // Au clic sur #addHead, créez un <p> avec "(tête)" et utilisez prepend()
-    // Au clic sur #addTail, créez un <p> avec "(fin)" et utilisez append()
+    
+    const ajouterTete = document.querySelector("#addHead");
+    const ajouterFin = document.querySelector("#addTail");
+    
+    ajouterTete.addEventListener("click",() =>{
+        const paragraphe = document.createElement("p");
+        paragraphe.textContent = "(tête)";
+        document.querySelector("#zone").prepend(paragraphe);
+    });
 
-    // TODO: Étape 3 - Clonage, remplacement et suppression
-    // Au clic sur #cloner, clonez le .card avec cloneNode(true), modifiez son texte et ajoutez-le
-    // Au clic sur #remplacer, remplacez la première .card avec replaceWith()
-    // Au clic sur #vider, supprimez toutes les .card avec remove()
+    ajouterFin.addEventListener("click",() =>{
+        const paragraphe = document.createElement("p");
+        paragraphe.textContent = "(fin)";
+        document.querySelector("#zone").append(paragraphe);
+    });
 
-    // TODO: Étape 4 - Insertion à une position donnée
-    // Au clic sur #ins2, créez un <li> "Étape 1.5" et insérez-le avant steps.children[1] avec before()
+    
+    const cloner = document.querySelector("#cloner");
+    const remplacer = document.querySelector("#remplacer");
+    const vider = document.querySelector("#vider");
+    let compteur = 2 ;
+
+    cloner.addEventListener ("click",() =>{
+        const carte = document.querySelector(".card")
+        const copie = carte.cloneNode(true)
+        copie.textContent = `Carte # ${compteur}` ;
+        carte.parentNode.append(copie); 
+        compteur ++ ;
+    });
+    
+    remplacer.addEventListener ("click",() =>{
+        const carte = document.querySelector(".card");
+        const modifierCarte = document.createElement("div");
+        modifierCarte.textContent = "Remplacement";
+        modifierCarte.classList.add("card");
+        carte.replaceWith(modifierCarte);
+        });
+
+    vider.addEventListener ("click",() =>{
+        const carte = document.querySelectorAll(".card");
+        
+        carte.forEach(carte => {
+            carte.remove();
+        });
+        
+        
+        
+        });
+
+
+    
+    const insertion2 = document.querySelector("#ins2");
+    insertion2.addEventListener ("click",() =>{
+    const elementInserer = document.createElement("li");
+    elementInserer.textContent = "Étape 1.5";
+    steps.children[1].before(elementInserer);
+    });    
 }
 
 // Initialisation au chargement de la page
