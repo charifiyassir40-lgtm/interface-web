@@ -7,34 +7,46 @@
  * Charge les recettes depuis l'API
  */
 async function chargerRecettes() {
-    // TODO: Afficher un message de chargement dans #recettes
 
-    // TODO: Utiliser try/catch pour gérer les erreurs
+    const listesRecettes = document.querySelector("#recettes");
+    listesRecettes.textContent = "Chargements en cours";
 
-    // TODO: Utiliser await fetch() pour récupérer les données de l'API
-    // URL: https://dummyjson.com/recipes?limit=3
 
-    // TODO: Vérifier si la réponse est ok (response.ok)
+    try {
+        const conserverDonnees = await fetch("https://dummyjson.com/recipes?limit=3")
+        if (!conserverDonnees.ok) {
+            throw new Error("Erreur de chargement");
+        }
+        const reponseJson = await conserverDonnees.json();
 
-    // TODO: Convertir la réponse en JSON avec await response.json()
+        const tableauRecettes = reponseJson.recipes;
 
-    // TODO: Récupérer le tableau recipes depuis data.recipes
+        listesRecettes.textContent = "";
 
-    // TODO: Vider la liste #recettes
+        tableauRecettes.forEach(recette => {
+            const elementLi = document.createElement("li");
+            listesRecettes.append(elementLi);
+            elementLi.textContent = `${recette.name} - ${recette.prepTimeMinutes} min - ${recette.cuisine} `;
+        });
 
-    // TODO: Parcourir les recettes et créer un <li> pour chacune
-    // Format: "nom - prepTimeMinutes min - cuisine"
-
-    // TODO: En cas d'erreur, afficher un message d'erreur dans #recettes
+    } catch (erreur) {
+        listesRecettes.textContent = "Erreur";
+    }
 }
+
 
 /**
  * Initialise les événements de la page
  */
 function initialiser() {
-    // TODO: Récupérer les éléments DOM (#charger, #recettes)
 
-    // TODO: Au clic sur #charger, appeler chargerRecettes()
+    const charger = document.querySelector("#charger");
+    const recettes2 = document.querySelector("#recettes");
+
+
+    charger.addEventListener("click", () => {
+        chargerRecettes();
+    });
 }
 
 // Initialisation au chargement de la page
@@ -44,3 +56,4 @@ if (typeof document !== 'undefined') {
 
 // Export pour les tests
 export { chargerRecettes, initialiser };
+

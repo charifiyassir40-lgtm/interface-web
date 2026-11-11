@@ -3,14 +3,14 @@
  * Manipuler des tableaux d'objets et afficher des listes filtrées
  */
 
-// TODO: Déclarez le tableau d'objets jeux
+
 const jeux = [
-  { nom: "Azul", duree: 45 },
-  { nom: "Catan", duree: 90 },
-  { nom: "Agricola", duree: 120 },
-  { nom: "Far Away", duree: 25 },
-  { nom: "Flip 7", duree: 20 },
-  { nom: "Ticket to ride", duree: 45 }
+    { nom: "Azul", duree: 45 },
+    { nom: "Catan", duree: 90 },
+    { nom: "Agricola", duree: 120 },
+    { nom: "Far Away", duree: 25 },
+    { nom: "Flip 7", duree: 20 },
+    { nom: "Ticket to ride", duree: 45 }
 ];
 
 /**
@@ -19,11 +19,11 @@ const jeux = [
  * @param {HTMLElement} elementUl - L'élément <ul> dans lequel ajouter les items
  */
 function afficherJeux(listeJeux, elementUl) {
-    
-    listeJeux.forEach((jeu)=> {
-    const elementLi = document.createElement("li");
-    elementLi.textContent = `${jeu.nom} (${jeu.duree} min)` ;
-    elementUl.append(elementLi);
+
+    listeJeux.forEach((jeu) => {
+        const elementLi = document.createElement("li");
+        elementLi.textContent = `${jeu.nom} (${jeu.duree} min)`;
+        elementUl.append(elementLi);
 
     });
 }
@@ -32,26 +32,17 @@ function afficherJeux(listeJeux, elementUl) {
  * Initialise les listes de jeux
  */
 function initialiser() {
-    // TODO: Récupérer les éléments DOM (#liste-court, #liste-long)
+
     const listCourt = document.querySelector("#liste-court");
     const listLong = document.querySelector("#liste-long");
 
-    
+
 
     const JeuxCourt = jeux.filter((jeu) => jeu.duree < 60);
     const JeuxLong = jeux.filter((jeu) => jeu.duree >= 60);
 
-     afficherJeux(JeuxCourt,listCourt) ;
-     afficherJeux(JeuxLong,listLong) ;
-
-
-    
-    
-        
-
-
-        
-
+    afficherJeux(JeuxCourt, listCourt);
+    afficherJeux(JeuxLong, listLong);
 
 }
 
